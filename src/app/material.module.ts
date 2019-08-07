@@ -1,4 +1,4 @@
-import { MatNativeDateModule,MatToolbarModule,MatButtonModule,MatInputModule, MatCardModule, MatFormFieldModule, MatCheckboxModule, MatDatepickerModule, MatRadioModule, MatSelectModule } from '@angular/material';
+import { MatProgressSpinnerModule,MatNativeDateModule,MatToolbarModule,MatButtonModule,MatInputModule, MatCardModule, MatFormFieldModule, MatCheckboxModule, MatDatepickerModule, MatRadioModule, MatSelectModule } from '@angular/material';
 
 import { NgModule } from '@angular/core';
 
@@ -13,9 +13,11 @@ import { NgModule } from '@angular/core';
     MatRadioModule, 
     MatSelectModule,
     MatToolbarModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatProgressSpinnerModule
     ],exports: [
-        MatButtonModule, 
+    MatButtonModule, 
+    MatProgressSpinnerModule,
     MatCardModule,  
     MatFormFieldModule, 
     MatCheckboxModule, 
