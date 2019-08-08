@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { commonService } from '../services/common.service';
+import { commonService } from './services/common.service';
 import { HttpClient } from '@angular/common/http'; 
 
 
