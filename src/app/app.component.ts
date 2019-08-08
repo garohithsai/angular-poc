@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { commonService } from '../services/commonService';
+import { commonService } from '../services/common.service';
 import { HttpClient } from '@angular/common/http'; 
 
 
@@ -17,8 +17,8 @@ export class AppComponent implements OnInit {
   constructor(private commonService: commonService, private http: HttpClient) {}
   ngOnInit() {
     this.personalForm = new FormGroup({
-      fName: new FormControl('',[Validators.required]),
-      dob: new FormControl('',[Validators.required])
+      fName: new FormControl('', [Validators.required]),
+      dob: new FormControl('', [Validators.required])
     });
   }
 

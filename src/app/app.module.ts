@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './material.module';
-import { commonService } from '../services/commonService';
+import { commonService } from '../services/common.service';
 import { HTTP_INTERCEPTORS,HttpClientModule } from '@angular/common/http';
 import { httpInterceptor } from 'src/interceptors/httpInterceptor';
 

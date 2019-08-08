@@ -3,7 +3,7 @@ import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/c
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
 
-import { commonService } from '../services/commonService';
+import { commonService } from '../services/common.service';
 
 @Injectable()
 export class httpInterceptor implements HttpInterceptor {
