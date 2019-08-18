@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  'https://ad1.everest.com': {
+    domainUrl: ''
+  },
+  'https://at1.everest.com': {
+    domainUrl: ''
+  },
+  'http://localhost:4200': {
+    domainUrl: 'localhost:8180'
+  }
 };
 
 /*

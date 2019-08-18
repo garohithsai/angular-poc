@@ -3,19 +3,19 @@ import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/c
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
 
-import { commonService } from '../services/common.service';
+import { LoaderService } from '../services/loader.service';
 
 @Injectable()
-export class httpInterceptor implements HttpInterceptor {
-    constructor(private commonService: commonService){}
-    intercept(req: HttpRequest<any> ,next: HttpHandler ): Observable<HttpEvent<any>> {
-        this.commonService.showLoader();
+export class RestInterceptor implements HttpInterceptor {
+    constructor(private loaderService: LoaderService) {}
+    intercept(req: HttpRequest<any> , next: HttpHandler ): Observable<HttpEvent<any>> {
+        this.loaderService.showLoader();
         return next.handle(req).pipe(
             finalize(() => {
                 setTimeout(() => {
-                    this.commonService.hideLoader()    
+                    this.loaderService.hideLoader();
                 }, 2000);
             })
-        )
+        );
     }
 }

@@ -7,9 +7,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './material.module';
-import { commonService } from './services/common.service';
-import { HTTP_INTERCEPTORS,HttpClientModule } from '@angular/common/http';
-import { httpInterceptor } from 'src/app/interceptors/httpInterceptor';
+import { LoaderService } from './services/loader.service';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { RestInterceptor } from 'src/app/interceptors/rest-interceptor';
+import { CommonService } from './services/common.service';
+import { RestService } from './services/rest.service';
 
 
 
@@ -27,8 +29,10 @@ import { httpInterceptor } from 'src/app/interceptors/httpInterceptor';
     MaterialModule
   ],
   providers : [
-    commonService,
-    {provide: HTTP_INTERCEPTORS , useClass: httpInterceptor, multi: true}
+    RestService,
+    CommonService,
+    LoaderService,
+    {provide: HTTP_INTERCEPTORS , useClass: RestInterceptor, multi: true}
   ],
   bootstrap: [AppComponent]
 })

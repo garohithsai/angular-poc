@@ -1,15 +1,18 @@
-import { Injectable} from '@angular/core';
-import { Subject } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { RestService } from './rest.service';
+import { Controller } from '../rest-services-config/controller-mapping';
+import { Constants } from '../constants/constants';
+import { ControllerServiceMappping } from '../rest-services-config/controller-services-mapping';
 
-@Injectable() 
-export class commonService {
-    isHttpServiceLoading = new Subject<boolean>();
-   
-    showLoader() {
-        this.isHttpServiceLoading.next(true);
+@Injectable()
+export class CommonService {
+
+    constructor(private restService: RestService) {
+
     }
-    
-    hideLoader() {
-        this.isHttpServiceLoading.next(false);
+
+    retrieveForm(body) {
+        return this.restService.post(Controller.FORM_CONTROLLER,
+             ControllerServiceMappping[Controller.FORM_CONTROLLER][Constants.CREATE_FORM], body);
     }
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { commonService } from './services/common.service';
-import { HttpClient } from '@angular/common/http'; 
+import { LoaderService } from './services/loader.service';
+import { CommonService } from './services/common.service';
 
 
 @Component({
@@ -12,9 +12,9 @@ import { HttpClient } from '@angular/common/http';
 export class AppComponent implements OnInit {
   title = 'angular-poc';
   personalForm: FormGroup;
-  isLoading = this.commonService.isHttpServiceLoading;
+  isLoading = this.loaderService.isHttpServiceLoading;
 
-  constructor(private commonService: commonService, private http: HttpClient) {}
+  constructor(private loaderService: LoaderService, private commonService: CommonService) {}
   ngOnInit() {
     this.personalForm = new FormGroup({
       fName: new FormControl('', [Validators.required]),
@@ -23,11 +23,9 @@ export class AppComponent implements OnInit {
   }
 
   callApi() {
-    this.http.get('https://reqres.in/api/users?page=2')
+    this.commonService.retrieveForm({})
       .subscribe(data => {
         console.log(data);
-      })
+      });
   }
-  
-  
 }
