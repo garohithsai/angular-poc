@@ -1,8 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
- @import "~@angular/material/prebuilt-themes/indigo-pink.css";
- 
-
-
+.example-full-width {
+    width: 100%;
+}
 .my-card {
     width: 100%;
     display: flex;
@@ -45,8 +43,4 @@
     left:0;
     background-color:rgba(0,0,0,.28);
     z-index:99999;
-}
-
-.marginleft-20 {
-    margin-left: 20px;
-}
+  }

@@ -1,20 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { LoaderService } from './services/loader.service';
 import { HttpClient } from '@angular/common/http';
-
+import { LoaderService } from '../../services/loader.service';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-personal-page-component',
+  templateUrl: './personal-page-component.component.html',
+  styleUrls: ['./personal-page-component.component.scss']
 })
-export class AppComponent implements OnInit {
+export class PersonalPageComponent implements OnInit {
+
   title = 'angular-poc';
   personalForm: FormGroup;
   isLoading = this.loaderService.isHttpServiceLoading;
 
-  constructor(private loaderService: LoaderService, private http: HttpClient) { }
+  constructor(private loaderService: LoaderService, private http: HttpClient, private router: Router) {}
   ngOnInit() {
     this.personalForm = new FormGroup({
       fName: new FormControl('', [Validators.required]),
@@ -26,6 +27,8 @@ export class AppComponent implements OnInit {
     this.http.get('https://reqres.in/api/users?page=2')
       .subscribe(data => {
         console.log(data);
+        this.router.navigate(['review']);
       });
   }
+
 }
