@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { LoaderService } from '../../services/loader.service';
 import { Router } from '@angular/router';
+
+import { LoaderService } from 'src/app/common/services/loader.service';
 
 @Component({
   selector: 'app-personal-page-component',

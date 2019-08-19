@@ -7,20 +7,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './material.module';
-import { CommonService } from './services/common.service';
-import { LoaderService } from './services/loader.service';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { RestInterceptor } from '../app/interceptors/rest-interceptor';
-import { PersonalPageComponent } from './components/personal-page-component/personal-page-component.component';
-import { ReviewPageComponent } from './components/review-page/review-page.component';
+import { ErrorComponentComponent } from './common/components/error-component/error-component.component';
+import { CommonService } from './common/services/common.service';
+import { LoaderService } from './common/services/loader.service';
+import { ServiceInterceptor } from './common/interceptors/ServiceInterceptor';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PersonalPageComponent,
-    ReviewPageComponent
+    ErrorComponentComponent
   ],
   imports: [
     BrowserModule,
@@ -34,10 +32,9 @@ import { ReviewPageComponent } from './components/review-page/review-page.compon
   providers : [
     CommonService,
     LoaderService,
-    {provide: HTTP_INTERCEPTORS , useClass: RestInterceptor, multi: true}
+    {provide: HTTP_INTERCEPTORS , useClass: ServiceInterceptor, multi: true}
   ],
   exports: [
-    PersonalPageComponent
   ],
   bootstrap: [AppComponent]
 })

@@ -8,7 +8,6 @@ import { ControllerServiceMappping } from '../rest-services-config/controller-se
 export class CommonService {
 
     constructor(private restService: RestService) {
-
     }
 
     retrieveForm(body) {

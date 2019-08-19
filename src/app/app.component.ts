@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { LoaderService } from './services/loader.service';
 import { HttpClient } from '@angular/common/http';
+
+import { LoaderService } from './common/services/loader.service';
 
 
 @Component({
@@ -23,7 +24,7 @@ export class AppComponent implements OnInit {
   }
 
   callApi() {
-    this.http.get('https://reqres.in/api/users?page=2')
+    this.http.get('https://reqres.in/')
       .subscribe(data => {
         console.log(data);
       });
