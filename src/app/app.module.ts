@@ -13,11 +13,16 @@ import { CommonService } from './common/services/common.service';
 import { LoaderService } from './common/services/loader.service';
 import { ServiceInterceptor } from './common/interceptors/ServiceInterceptor';
 
+import { PersonalPageComponent } from './business/form-selection/components/personal-page-component/personal-page-component.component';
+import { ReviewPageComponent } from './business/form-selection/components/review-page/review-page.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    PersonalPageComponent,
+    ReviewPageComponent,
     ErrorComponentComponent
   ],
   imports: [
