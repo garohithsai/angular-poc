@@ -12,6 +12,6 @@ export class CommonService {
 
     retrieveForm(body) {
         return this.restService.post(Controller.FORM_CONTROLLER,
-             ControllerServiceMappping[Controller.FORM_CONTROLLER][Constants.CREATE_FORM], body);
+             ControllerServiceMappping[Controller.FORM_CONTROLLER][Constants.RETRIEVE_FORM], body);
     }
 }

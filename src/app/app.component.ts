@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
-
 import { LoaderService } from './common/services/loader.service';
+import { CommonService } from './common/services/common.service';
 
 
 @Component({
@@ -15,7 +14,7 @@ export class AppComponent implements OnInit {
   personalForm: FormGroup;
   isLoading = this.loaderService.isHttpServiceLoading;
 
-  constructor(private loaderService: LoaderService, private http: HttpClient) { }
+  constructor(private loaderService: LoaderService, private commonService: CommonService) { }
   ngOnInit() {
     this.personalForm = new FormGroup({
       fName: new FormControl('', [Validators.required]),
@@ -24,7 +23,7 @@ export class AppComponent implements OnInit {
   }
 
   callApi() {
-    this.http.get('https://reqres.in/')
+    this.commonService.retrieveForm('124758')
       .subscribe(data => {
         console.log(data);
       });

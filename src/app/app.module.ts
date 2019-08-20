@@ -16,6 +16,7 @@ import { ServiceInterceptor } from './common/interceptors/ServiceInterceptor';
 import { PersonalPageComponent } from './business/form-review/components/personal-page-component/personal-page-component.component';
 import { ReviewPageComponent } from './business/form-review/components/review-page/review-page.component';
 import { HeaderComponent } from './common/components/header/header.component';
+import { RestService } from './common/services/rest.service';
 
 
 
@@ -39,6 +40,7 @@ import { HeaderComponent } from './common/components/header/header.component';
   providers : [
     CommonService,
     LoaderService,
+    RestService,
     {provide: HTTP_INTERCEPTORS , useClass: ServiceInterceptor, multi: true}
   ],
   exports: [
