@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { RouterService } from '../../../../common/services/router.service';
 
 @Component({
   selector: 'app-review-page',
@@ -8,13 +8,13 @@ import { Router } from '@angular/router';
 })
 export class ReviewPageComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private routerService: RouterService) { }
 
   ngOnInit() {
   }
 
   previousPage() {
-    this.router.navigate(['']);
+    this.routerService.goToPreviousPage();
   }
 
 }
