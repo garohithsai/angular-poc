@@ -44,8 +44,7 @@ import { HeaderComponent } from './common/components/header/header.component';
     LoaderService,
     RouterService,
     {provide: HTTP_INTERCEPTORS , useClass: ServiceInterceptor, multi: true},
-    RestService,
-    {provide: HTTP_INTERCEPTORS , useClass: RestInterceptor, multi: true}
+    RestService
   ],
   exports: [
   ],
