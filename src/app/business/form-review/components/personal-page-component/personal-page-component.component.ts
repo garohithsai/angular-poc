@@ -12,7 +12,7 @@ import { LoaderService } from 'src/app/common/services/loader.service';
 })
 export class PersonalPageComponent implements OnInit {
 
-  title = 'angular-poc';
+  title = 'form-selection-tool';
   personalForm: FormGroup;
   isLoading = this.loaderService.isHttpServiceLoading;
 

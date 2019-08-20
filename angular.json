@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-poc": {
+    "form-selection-tool": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-poc",
+            "outputPath": "dist/form-selection-tool",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-poc:build"
+            "browserTarget": "form-selection-tool:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-poc:build:production"
+              "browserTarget": "form-selection-tool:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-poc:build"
+            "browserTarget": "form-selection-tool:build"
           }
         },
         "test": {
@@ -108,7 +108,7 @@
         }
       }
     },
-    "angular-poc-e2e": {
+    "form-selection-tool-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -117,11 +117,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-poc:serve"
+            "devServerTarget": "form-selection-tool:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-poc:serve:production"
+              "devServerTarget": "form-selection-tool:serve:production"
             }
           }
         },
@@ -137,5 +137,5 @@
       }
     }
   },
-  "defaultProject": "angular-poc"
+  "defaultProject": "form-selection-tool"
 }

@@ -13,8 +13,9 @@ import { CommonService } from './common/services/common.service';
 import { LoaderService } from './common/services/loader.service';
 import { ServiceInterceptor } from './common/interceptors/ServiceInterceptor';
 
-import { PersonalPageComponent } from './business/form-selection/components/personal-page-component/personal-page-component.component';
-import { ReviewPageComponent } from './business/form-selection/components/review-page/review-page.component';
+import { PersonalPageComponent } from './business/form-review/components/personal-page-component/personal-page-component.component';
+import { ReviewPageComponent } from './business/form-review/components/review-page/review-page.component';
+import { HeaderComponent } from './common/components/header/header.component';
 
 
 
@@ -23,7 +24,8 @@ import { ReviewPageComponent } from './business/form-selection/components/review
     AppComponent,
     PersonalPageComponent,
     ReviewPageComponent,
-    ErrorComponentComponent
+    ErrorComponentComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

@@ -11,7 +11,7 @@ import { LoaderService } from './common/services/loader.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'angular-poc';
+  title = 'form-selection-tool';
   personalForm: FormGroup;
   isLoading = this.loaderService.isHttpServiceLoading;
 
