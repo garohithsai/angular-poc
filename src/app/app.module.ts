@@ -18,6 +18,7 @@ import { RouterService } from './common/services/router.service';
 import { PersonalPageComponent } from './business/form-review/components/personal-page-component/personal-page-component.component';
 import { ReviewPageComponent } from './business/form-review/components/review-page/review-page.component';
 import { HeaderComponent } from './common/components/header/header.component';
+import { FooterComponent } from './common/components/footer/footer.component';
 
 
 
@@ -27,7 +28,8 @@ import { HeaderComponent } from './common/components/header/header.component';
     PersonalPageComponent,
     ReviewPageComponent,
     ErrorComponentComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

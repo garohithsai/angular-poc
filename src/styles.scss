@@ -1,8 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
  @import "~@angular/material/prebuilt-themes/indigo-pink.css";
  
-
-
+ /** Common Styles**/
 .my-card {
     width: 100%;
     display: flex;
@@ -28,7 +27,7 @@
     padding-right: 10px;
 }
 
- .spinner {
+.spinner {
     z-index: 9999;
     position: absolute;
     top: 50%;
@@ -49,4 +48,7 @@
 
 .marginleft-20 {
     margin-left: 20px;
+}
+.text-center {
+    text-align: center;
 }

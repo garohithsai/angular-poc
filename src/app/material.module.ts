@@ -1,7 +1,7 @@
 import { MatProgressSpinnerModule,
         MatNativeDateModule, MatToolbarModule, MatButtonModule, MatInputModule,
         MatCardModule, MatFormFieldModule, MatCheckboxModule, MatDatepickerModule,
-        MatRadioModule, MatSelectModule, MatSnackBarModule} from '@angular/material';
+        MatRadioModule, MatSelectModule, MatSnackBarModule, MatSidenavModule} from '@angular/material';
 
 import { NgModule } from '@angular/core';
 
@@ -30,7 +30,8 @@ import { NgModule } from '@angular/core';
         MatInputModule,
         MatNativeDateModule,
         MatToolbarModule,
-        MatSnackBarModule
+        MatSnackBarModule,
+        MatSidenavModule
     ]
 })
 export class MaterialModule {}
