@@ -11,12 +11,13 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ErrorComponentComponent } from './common/components/error-component/error-component.component';
 import { CommonService } from './common/services/common.service';
 import { LoaderService } from './common/services/loader.service';
+import { RestService } from './common/services/rest.service';
 import { ServiceInterceptor } from './common/interceptors/ServiceInterceptor';
+import { RouterService } from './common/services/router.service';
 
 import { PersonalPageComponent } from './business/form-review/components/personal-page-component/personal-page-component.component';
 import { ReviewPageComponent } from './business/form-review/components/review-page/review-page.component';
 import { HeaderComponent } from './common/components/header/header.component';
-import { RestService } from './common/services/rest.service';
 
 
 
@@ -40,8 +41,9 @@ import { RestService } from './common/services/rest.service';
   providers : [
     CommonService,
     LoaderService,
-    RestService,
-    {provide: HTTP_INTERCEPTORS , useClass: ServiceInterceptor, multi: true}
+    RouterService,
+    {provide: HTTP_INTERCEPTORS , useClass: ServiceInterceptor, multi: true},
+    RestService
   ],
   exports: [
   ],

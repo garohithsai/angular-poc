@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { CommonService } from '../../../../common/services/common.service';
+import { RouterService } from '../../../../common/services/router.service';
 
 import { LoaderService } from 'src/app/common/services/loader.service';
 
@@ -16,7 +17,8 @@ export class PersonalPageComponent implements OnInit {
   personalForm: FormGroup;
   isLoading = this.loaderService.isHttpServiceLoading;
 
-  constructor(private loaderService: LoaderService, private http: HttpClient, private router: Router) {}
+  constructor(private loaderService: LoaderService,
+    private routerService: RouterService, private http: HttpClient) {}
   ngOnInit() {
     this.personalForm = new FormGroup({
       fName: new FormControl('', [Validators.required]),
@@ -28,7 +30,7 @@ export class PersonalPageComponent implements OnInit {
     this.http.get('https://reqres.in/api/users?page=2')
       .subscribe(data => {
         console.log(data);
-        this.router.navigate(['review']);
+        this.routerService.goToNextPage();
       });
   }
 
