@@ -13,7 +13,6 @@ import { CommonService } from './common/services/common.service';
 import { LoaderService } from './common/services/loader.service';
 import { RestService } from './common/services/rest.service';
 import { ServiceInterceptor } from './common/interceptors/ServiceInterceptor';
-import { RestInterceptor } from './common/interceptors/rest-interceptor';
 import { RouterService } from './common/services/router.service';
 
 import { PersonalPageComponent } from './business/form-review/components/personal-page-component/personal-page-component.component';
