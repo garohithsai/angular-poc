@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  'https://ad1.everest.com': {
-    domainUrl: ''
+  'https://rm-fstdev.everestre.net': {
+    domainUrl: 'https://rm-apidev.everestre.net/fst'
   },
   'https://at1.everest.com': {
     domainUrl: ''
