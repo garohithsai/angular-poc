@@ -5,6 +5,8 @@ import { CommonService } from '../../../../common/services/common.service';
 import { RouterService } from '../../../../common/services/router.service';
 
 import { LoaderService } from 'src/app/common/services/loader.service';
+import { FormBuilderService } from 'src/app/common/services/form-builder/form-builder.service';
+import { PersonalPageFormGroups } from './personal-page-component.form';
 
 @Component({
   selector: 'app-personal-page-component',
@@ -17,13 +19,16 @@ export class PersonalPageComponent implements OnInit {
   personalForm: FormGroup;
   isLoading = this.loaderService.isHttpServiceLoading;
 
-  constructor(private loaderService: LoaderService,
-    private routerService: RouterService, private http: HttpClient) {}
+  constructor(private loaderService: LoaderService, private http: HttpClient, private routerService: RouterService,
+    private formBuilderService: FormBuilderService) {}
   ngOnInit() {
-    this.personalForm = new FormGroup({
+    /* this.personalForm = new FormGroup({
       fName: new FormControl('', [Validators.required]),
       dob: new FormControl('', [Validators.required])
-    });
+    }); */
+    // Use form builder service to build form by providing a specific JSON.
+    this.personalForm = this.formBuilderService.buildForm(PersonalPageFormGroups.sampleForm);
+    console.log(this.personalForm);
   }
 
   callApi() {

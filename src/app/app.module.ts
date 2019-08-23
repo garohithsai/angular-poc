@@ -19,6 +19,7 @@ import { PersonalPageComponent } from './business/form-review/components/persona
 import { ReviewPageComponent } from './business/form-review/components/review-page/review-page.component';
 import { HeaderComponent } from './common/components/header/header.component';
 import { FooterComponent } from './common/components/footer/footer.component';
+import { FormBuilderService } from './common/services/form-builder/form-builder.service';
 
 
 
@@ -43,9 +44,10 @@ import { FooterComponent } from './common/components/footer/footer.component';
   providers : [
     CommonService,
     LoaderService,
+    RestService,
     RouterService,
-    {provide: HTTP_INTERCEPTORS , useClass: ServiceInterceptor, multi: true},
-    RestService
+    FormBuilderService,
+    {provide: HTTP_INTERCEPTORS , useClass: ServiceInterceptor, multi: true}
   ],
   exports: [
   ],
