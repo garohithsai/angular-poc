@@ -10,6 +10,21 @@ export class ReviewPageComponent implements OnInit {
 
   constructor(private routerService: RouterService) { }
 
+  lobs = [
+    {
+      key:  'WC',
+      value:  'Workers Compensation'
+    },
+    {
+      key:  'AL',
+      value:  'Automobile'
+    },
+    {
+      key:  'GL',
+      value:  'General Liability'
+    }
+  ];
+
   ngOnInit() {
   }
 

@@ -5,12 +5,14 @@
     padding: 8px 16px;
 }
 .header-wrapper {
-    color: #f0f6ff;
+    img {
+        height: 100px;
+        width: 128px;
+    }
     .brand-title {
         font-size: 20px;
     }
     flex-shrink: 0;
-    background-color: #296cbb;
     .flex-space {
         flex-grow: 1;
     }

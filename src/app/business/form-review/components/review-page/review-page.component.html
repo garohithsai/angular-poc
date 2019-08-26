@@ -1,31 +1,19 @@
-<div class="container">
   <!-- <mat-toolbar color="primary">
     <span>Angular POC</span>
   </mat-toolbar> -->
-  <mat-card class="my-card">
-      <mat-card-title>Personal Form </mat-card-title>
-    <form>
-    <mat-form-field class="example-full-width">
-      <mat-label>Name</mat-label>
-      <input matInput name="fName">
-    </mat-form-field>
-
-    <section class="example-section">
-      <mat-checkbox class="marginleft-20">Checked</mat-checkbox>
-      <mat-checkbox class="marginleft-20">Indeterminate</mat-checkbox>
-    </section>
-
-    <mat-form-field class="example-full-width">
-      <mat-label>Cars</mat-label>
-      <select matNativeControl>
-        <option value="volvo">Volvo</option>
-        <option value="saab">Saab</option>
-        <option value="mercedes">Mercedes</option>
-        <option value="audi">Audi</option>
-      </select>
-    </mat-form-field>
-
-    <button mat-button class="primary" (click)="previousPage()">Back</button>
-    </form>
-  </mat-card>
-</div>
+  <div class="col-sm-12">
+    <div class="row">
+      <div class="col-sm-5">
+          <mat-form-field>
+            <mat-label> LOB </mat-label>
+              <mat-select >
+                <mat-option *ngFor="let lob of lobs" [value]="lob.key">{{ lob.value }}</mat-option>
+              </mat-select>
+          </mat-form-field>
+      </div>
+      <div class="col-sm-5">
+        </div>
+        <div class="col-sm-2">
+          </div>
+    </div>
+  </div>

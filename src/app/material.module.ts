@@ -4,7 +4,7 @@ import { MatProgressSpinnerModule,
         MatRadioModule, MatSelectModule, MatSnackBarModule, MatTabsModule, MatTableModule, MatListModule,
         MatSidenavModule, MatGridListModule} from '@angular/material';
 
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 
 @NgModule({
     imports: [
