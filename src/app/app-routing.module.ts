@@ -1,13 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PersonalPageComponent } from './business/form-review/components/personal-page-component/personal-page-component.component';
-import { ReviewPageComponent } from './business/form-review/components/review-page/review-page.component';
+import { FormReviewComponent } from './business/form-review/form-review/form-review.component';
 
 
 const routes: Routes = [
-  { path: '', component: PersonalPageComponent },
-  { path: 'review', component: ReviewPageComponent },
-  { path: '**', component: PersonalPageComponent }
+  { path: '', component: FormReviewComponent },
+  { path: '**', component: FormReviewComponent }
 ];
 
 @NgModule({

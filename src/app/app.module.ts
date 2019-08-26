@@ -20,6 +20,7 @@ import { ReviewPageComponent } from './business/form-review/components/review-pa
 import { HeaderComponent } from './common/components/header/header.component';
 import { FooterComponent } from './common/components/footer/footer.component';
 import { FormBuilderService } from './common/services/form-builder/form-builder.service';
+import { FormReviewModule } from './business/form-review/form-review.module'
 
 
 
@@ -39,7 +40,8 @@ import { FormBuilderService } from './common/services/form-builder/form-builder.
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    FormReviewModule
   ],
   providers : [
     CommonService,
