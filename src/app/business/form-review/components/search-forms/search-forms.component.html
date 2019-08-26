@@ -1,0 +1,32 @@
+<mat-form-field class="marginleft-20 select-box-width">
+  <mat-label i18n="fieldName|Title for Line of Business field@@lineofBusinessfield">Line of Business</mat-label>
+  <mat-select>
+    <!-- <mat-option *ngFor="let food of foods" [value]="food.value">
+      {{food.viewValue}}
+    </mat-option> -->
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field class="marginleft-20 select-box-width">
+  <mat-label>Category Part</mat-label>
+  <mat-select>
+    <!-- <mat-option *ngFor="let food of foods" [value]="food.value">
+      {{food.viewValue}}
+    </mat-option> -->
+  </mat-select>
+</mat-form-field>
+
+
+<mat-form-field class="marginleft-20 select-box-width">
+  <mat-label>State</mat-label>
+  <mat-select>
+    <!-- <mat-option *ngFor="let food of foods" [value]="food.value">
+      {{food.viewValue}}
+    </mat-option> -->
+  </mat-select>
+</mat-form-field>
+
+<app-table-component [columnsList]="columnsList" [ElementData]="Element_Data" [buttonName]="deLinkName"
+  (selectedData)="formsLinkageSelectedData($event)"
+>
+</app-table-component>
