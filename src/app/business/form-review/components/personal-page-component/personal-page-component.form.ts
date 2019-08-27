@@ -3,13 +3,13 @@ import { StructuredFormControl, FormControlTypes } from 'src/app/common/services
 export class PersonalPageFormGroups {
     public static sampleForm: StructuredFormControl[] = [
         {
-            name: 'fName',
+            name: 'role',
             defaultValue: '',
             type:  FormControlTypes.Input,
-            validations: {required: true, minLength: 10, maxLength: 20}
+            validations: {required: true, maxLength: 20}
         },
         {
-            name: 'dob',
+            name: 'pass',
             defaultValue: '',
             type:  FormControlTypes.Input,
             validations: {required: true}

@@ -3,6 +3,8 @@ import { RestService } from './rest.service';
 import { Controller } from '../rest-services-config/controller-mapping';
 import { Constants } from '../constants/constants';
 import { ControllerServiceMappping } from '../rest-services-config/controller-services-mapping';
+import { Observable } from 'rxjs';
+import { of } from 'rxjs';
 
 @Injectable()
 export class CommonService {
@@ -14,6 +16,8 @@ export class CommonService {
 
     constructor(private restService: RestService) {
     }
+    public data: any;
+    public userRole: any;
 
     retrieveForm(body) {
         return this.restService.post(Controller.FORM_CONTROLLER,
@@ -50,5 +54,18 @@ export class CommonService {
 
     getFormSearchSelectionData() {
         return this.selection;
+    }
+    loadRoleData(role): Observable<any> {
+        if (role === 'admin') {
+            this.data = {
+                userRole : 'admin'
+            };
+        } else {
+            this.data = {
+                userRole : 'user'
+            };
+        }
+        sessionStorage.setItem('userRole', this.data.userRole);
+        return of(this.data);
     }
 }

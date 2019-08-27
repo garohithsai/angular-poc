@@ -9,6 +9,8 @@ import { RouterService } from '../../../../common/services/router.service';
 export class ReviewPageComponent implements OnInit {
 
   constructor(private routerService: RouterService) { }
+  public role: string;
+  public displayAdmin = false;
 
   lobs = [
     {
@@ -26,6 +28,10 @@ export class ReviewPageComponent implements OnInit {
   ];
 
   ngOnInit() {
+    this.role = sessionStorage.getItem('userRole');
+    if (this.role === 'admin') {
+      this.displayAdmin = true;
+    }
   }
 
   previousPage() {

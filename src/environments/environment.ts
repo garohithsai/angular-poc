@@ -11,7 +11,7 @@ export const environment = {
     domainUrl: ''
   },
   'http://localhost:4200': {
-    domainUrl: 'http://localhost:8080'
+    domainUrl: 'http://10.21.211.158:8085'
   }
 };
 

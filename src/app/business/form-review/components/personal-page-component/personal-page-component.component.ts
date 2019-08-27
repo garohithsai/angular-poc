@@ -7,6 +7,7 @@ import { RouterService } from '../../../../common/services/router.service';
 import { LoaderService } from 'src/app/common/services/loader.service';
 import { FormBuilderService } from 'src/app/common/services/form-builder/form-builder.service';
 import { PersonalPageFormGroups } from './personal-page-component.form';
+import { UserRoleService } from 'src/app/common/services/user-role.service';
 
 @Component({
   selector: 'app-personal-page-component',
@@ -19,22 +20,26 @@ export class PersonalPageComponent implements OnInit {
   personalForm: FormGroup;
   isLoading = this.loaderService.isHttpServiceLoading;
 
-  constructor(private loaderService: LoaderService, private http: HttpClient, private routerService: RouterService,
-    private formBuilderService: FormBuilderService) {}
+  constructor(private loaderService: LoaderService,
+    private http: HttpClient, private routerService: RouterService,
+    private formBuilderService: FormBuilderService, private commonService: CommonService,
+    private userRoleService: UserRoleService) {}
+    roles = [
+      {value: 'admin', viewValue: 'Admin'},
+      {value: 'user', viewValue: 'User'},
+    ];
   ngOnInit() {
-    /* this.personalForm = new FormGroup({
-      fName: new FormControl('', [Validators.required]),
-      dob: new FormControl('', [Validators.required])
-    }); */
     // Use form builder service to build form by providing a specific JSON.
     this.personalForm = this.formBuilderService.buildForm(PersonalPageFormGroups.sampleForm);
     console.log(this.personalForm);
   }
 
-  callApi() {
-    this.http.get('https://reqres.in/api/users?page=2')
+  checkRoleData(role) {
+    console.log(this.personalForm.controls.role.value);
+    this.commonService.loadRoleData(this.personalForm.controls.role.value)
       .subscribe(data => {
         console.log(data);
+        this.userRoleService.setRole(data);
         this.routerService.goToNextPage();
       });
   }

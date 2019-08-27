@@ -17,10 +17,6 @@ export class AppComponent implements OnInit {
   constructor(private loaderService: LoaderService, private commonService: CommonService) { }
   ngOnInit() {
     this.callApi();
-    this.personalForm = new FormGroup({
-      fName: new FormControl('', [Validators.required]),
-      dob: new FormControl('', [Validators.required])
-    });
   }
 
   callApi() {
