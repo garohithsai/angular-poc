@@ -5,13 +5,13 @@ export class PersonalPageFormGroups {
         {
             name: 'role',
             defaultValue: '',
-            type:  FormControlTypes.Input,
-            validations: {required: true, maxLength: 20}
+            type:  FormControlTypes.INPUT,
+            validations: {required: true, minLength: 10, maxLength: 20}
         },
         {
             name: 'pass',
             defaultValue: '',
-            type:  FormControlTypes.Input,
+            type:  FormControlTypes.INPUT,
             validations: {required: true}
         }
     ];
