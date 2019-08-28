@@ -19,6 +19,9 @@ export class FormsLinkageComponent implements OnInit {
 
   columnsList =  Object.keys(Constants.LINKAGE_COL_NAMES);
   deLinkName = 'De Link';
+  colMap = Constants.LINKAGE_COL_NAMES;
+  tabButton = true;
+  isSortRequired = false;
   ngOnInit() {
   }
 

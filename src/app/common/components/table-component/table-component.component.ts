@@ -4,6 +4,8 @@ import { SelectionModel } from '@angular/cdk/collections';
 import { FormLinkageModel } from '../../interface/form-linkage-model';
 import { Constants } from '../../constants/constants';
 import { CommonService } from '../../services/common.service';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatSort} from '@angular/material/sort';
 
 
 
@@ -15,6 +17,9 @@ import { CommonService } from '../../services/common.service';
 export class TableComponentComponent implements OnInit, AfterViewInit {
 
   @Input() columnsList: string[];
+  @Input() colMapping: Object;
+  @Input() isSort: Boolean;
+  @Input() isButtonRequired: Boolean;
   @ViewChild('myButton') myButton: ElementRef<HTMLElement>;
   @Input() ElementData: FormLinkageModel[];
   @Input() buttonName: string;
@@ -24,15 +29,19 @@ export class TableComponentComponent implements OnInit, AfterViewInit {
   dataSource: MatTableDataSource<FormLinkageModel>;
   selection: SelectionModel<FormLinkageModel>;
   currentTab: string;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
 
   constructor(private commonService: CommonService) {
   }
 
   ngOnInit() {
     this.dataSource = new MatTableDataSource<FormLinkageModel>(this.ElementData);
+    this.dataSource.sort = this.sort;
     this.selection = new SelectionModel<FormLinkageModel>(true, []);
     this.displayedColumns = this.columnsList;
     this.commonService.setSearchFormData(this.ElementData);
+    this.dataSource.paginator = this.paginator;
   }
 
   ngAfterViewInit() {
@@ -54,16 +63,25 @@ export class TableComponentComponent implements OnInit, AfterViewInit {
       if (data) {
         const deletedLinkedForm = this.commonService.getDeletedLinkedForms();
         this.dataSource = new MatTableDataSource<FormLinkageModel>(this.commonService.getSearchFormData());
-        this.selection = this.commonService.getFormSearchSelectionData();
+        // this.selection = this.commonService.getFormSearchSelectionData();
+       // this.ngOnInit();
+       this.selection.toggle(this.dataSource.data[1]);
+       console.log(this.selection.isSelected(this.dataSource.data[1]));
+      // this.ngAfterViewInit();
+      // this.isAllSelected();
         if (deletedLinkedForm) {
-          deletedLinkedForm.forEach(item => {
-            const index: number = this.dataSource.data.findIndex(d => d === item);
-            //  this.selection.deselect(this.dataSource.data[index]);
-            //  this.checkboxLabel();
-            // this.selection.clear();
-            // const mycheckox = this.mycheckBox.toArray();
-            // //mycheckox[1].checked = false;
-            this.sendSelectedData(index);
+          // deletedLinkedForm.forEach(item => {
+          //   const index: number = this.dataSource.data.findIndex(d => d === item);
+          //   //  this.selection.deselect(this.dataSource.data[index]);
+          //   //  this.checkboxLabel();
+          //   // this.selection.clear();
+          //   // const mycheckox = this.mycheckBox.toArray();
+          //   // //mycheckox[1].checked = false;
+          //   this.sendSelectedData(index);
+          // });
+          // this.selection.clear();
+          deletedLinkedForm.forEach(element => {
+            element.excluded = false;
           });
         }
         // this.selection = new SelectionModel<FormLinkageModel>(false, data);
@@ -139,7 +157,7 @@ export class TableComponentComponent implements OnInit, AfterViewInit {
   }
 
   getColumnHeaderName(column: string) {
-    return Constants.LINKAGE_COL_NAMES[column];
+    return this.colMapping[column];
   }
 
 

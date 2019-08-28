@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormLinkageModel} from '../../../../common/interface/form-linkage-model';
 import { Constants } from '../../../../common/constants/constants';
 import { CommonService } from '../../../../common/services/common.service';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-search-forms',
@@ -32,10 +33,26 @@ export class SearchFormsComponent implements OnInit {
 
   columnsList =  Object.keys(Constants.LINKAGE_COL_NAMES);
   deLinkName = 'Link';
+  colMap = Constants.LINKAGE_COL_NAMES;
+  tabButton = true;
+  isSortRequired = true;
+
+  toppings = new FormControl();
+  toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
 
   constructor(private commonService: CommonService) { }
 
   ngOnInit() {
+    for (let i = 0; i < this.Element_Data.length ; i++) {
+      const x = [];
+      for (const key in this.Element_Data[i]) {
+        if (key === 'fillinStatus' || key === 'fillingType' || key === 'formCategory') {
+         x.push(key + ':' + this.Element_Data[i][key]);
+        }
+    }
+    this.Element_Data[i].detailedColumn = x;
+    }
+    console.log(JSON.stringify(this.Element_Data));
   }
 
   formsLinkageSelectedData(data) {
