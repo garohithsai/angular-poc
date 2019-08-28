@@ -1,6 +1,65 @@
-<mat-tab-group>
-    <mat-tab label="Form Summary"> Form Summary </mat-tab>
-    <mat-tab label="Fill-in Information"> Fill-In Information </mat-tab>
-    <mat-tab label="State Approval Information"> State Approval Information  </mat-tab>
-    <mat-tab label="Forms Linkage"> <app-forms-linkage></app-forms-linkage> </mat-tab>
-</mat-tab-group>
+
+<form [formGroup]="guidelineForm">
+  <mat-card>
+      <mat-card-header>
+          <!-- <div class="col-sm-1">
+            <mat-icon> attach_file </mat-icon>
+          </div>
+          <div class="col-sm-5">
+            <span>{{ form.formId }} </span>
+          </div>
+          <div class="col-sm-6">
+            <span>{{ form.formName }}</span>
+          </div> -->  
+        <div mat-card-avatar><mat-icon> attach_file </mat-icon></div>
+        <mat-card-title>
+          <div class="row">
+          <div class="col-sm-4"> {{ form.formId }} </div>
+          <div class="col-sm-8"> {{ form.formName }} </div>
+        </div>
+        </mat-card-title>
+      </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col-sm-2">
+          <span class="bold">Line of Business</span>
+        </div>
+        <div class="col-sm-4">
+            <span class="bold">Other Line(s) of Business</span>
+        </div>
+        <div class="col-sm-2">
+            <span class="bold">Coverage Part</span>
+        </div>
+        <div class="col-sm-2">
+            <span class="bold">Edition Date</span>
+        </div>
+        <div class="col-sm-2">
+            <span class="bold">Other Editions</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-2">
+          <span>{{ form.lineOfBusiness }}</span>
+        </div>
+        <div class="col-sm-4">
+          <span>{{ form.otherLineOfBusiness }}</span>
+        </div>
+        <div class="col-sm-2">
+          <span>{{ form.coveragePart }}</span>
+        </div>
+        <div class="col-sm-2">
+          <span>{{ form.editionDate}}</span>
+        </div>
+        <div class="col-sm-2">
+          <span>{{ form.otherEditions}}</span>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <mat-tab-group>
+      <mat-tab label="Form Summary"> <app-form-summary [formSummary] = "guidelineForm.get('formSummary')"> </app-form-summary> </mat-tab>
+      <mat-tab label="Fill-in Information"> Fill-In Information </mat-tab>
+      <mat-tab label="State Approval Information"> State Approval Information  </mat-tab>
+      <mat-tab label="Forms Linkage"> <app-forms-linkage></app-forms-linkage> </mat-tab>
+  </mat-tab-group>
+</form>

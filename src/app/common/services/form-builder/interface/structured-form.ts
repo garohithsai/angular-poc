@@ -18,8 +18,9 @@ export interface Validations {
 }
 
 export enum FormControlTypes {
-    Input = 'Input',
-    Select = 'Select',
-    Checkbox = 'Checkbox',
-    Radio = 'Radio',
+    INPUT = 'INPUT',
+    SELECT = 'SELECT',
+    CHECKBOX = 'CHECKBOX',
+    RADIO = 'RADIO',
+    TEXT_AREA = 'TEXT_AREA'
 }

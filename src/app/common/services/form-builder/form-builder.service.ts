@@ -29,7 +29,7 @@ export class FormBuilderService {
     pushValidators(validators, validationProperty , validations, formControlType) {
       switch (validationProperty) {
          case 'required':
-            validators.push(formControlType === FormControlTypes.Checkbox ? Validators.requiredTrue : Validators.required);
+            validators.push(formControlType === FormControlTypes.CHECKBOX ? Validators.requiredTrue : Validators.required);
             break;
          case 'minLength':
             validators.push(Validators.minLength(validations.minLength));
