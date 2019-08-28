@@ -15,6 +15,16 @@ export class Constants  {
         'complexLinkage': 'Complex Linkage',
         'detailedColumn': 'Detailed Columns'
     };
+    public static GUIDELINES_COL_NAMES = {
+        'formNumber': 'Form #',
+        'formName': 'Form Name',
+        'coveragePart': 'Coverage Part',
+        'lastEdited': 'Last Edited',
+        'updatedBy': 'Updated By',
+        'status': 'Status'
+    };
     public static FORMSLINKAGE_TABLECOLUMNS_LIST = ['select', 'number', 'name', 'editionDate', 'fillinStatus',
     'fillingType', 'formCategory' , 'guideline', 'complexLinkage', 'detailedColumn'];
+    public static FORMS_GUIDELINES_COLUMN_LIST = ['Form #', 'Form Name', 'Coverage Part', 'Last Edited',
+    'Updated By', 'Status'];
 }

@@ -10,3 +10,13 @@ export interface FormLinkageModel {
     excluded?: boolean;
     detailedColumn?: Array<any>;
 }
+
+export interface GuideLinesDashboardModel {
+    formNumber: string;
+    formName: string;
+    coveragePart: string;
+    lastEdited: string;
+    updatedBy: string;
+    status: string;
+    icon?: string;
+}

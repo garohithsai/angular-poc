@@ -1,20 +1,20 @@
 // import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-// import { ErrorComponentComponent } from './error-component.component';
+// import { ReviewPageComponent } from './dashboard.component';
 
-// describe('ErrorComponentComponent', () => {
-//   let component: ErrorComponentComponent;
-//   let fixture: ComponentFixture<ErrorComponentComponent>;
+// describe('ReviewPageComponent', () => {
+//   let component: ReviewPageComponent;
+//   let fixture: ComponentFixture<ReviewPageComponent>;
 
 //   beforeEach(async(() => {
 //     TestBed.configureTestingModule({
-//       declarations: [ ErrorComponentComponent ]
+//       declarations: [ ReviewPageComponent ]
 //     })
 //     .compileComponents();
 //   }));
 
 //   beforeEach(() => {
-//     fixture = TestBed.createComponent(ErrorComponentComponent);
+//     fixture = TestBed.createComponent(ReviewPageComponent);
 //     component = fixture.componentInstance;
 //     fixture.detectChanges();
 //   });

@@ -1,13 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { FormReviewComponent } from './business/form-review/form-review/form-review.component';
-import { ReviewPageComponent } from './business/form-review/components/review-page/review-page.component';
-import { GuidelineComponent } from './business/form-review/components/guideline/guideline.component';
-
+import { DashboardComponent } from './business/form-review/components/dashboard/dashboard.component';
 
 const routes: Routes = [
-  { path: '', component: FormReviewComponent },
-  { path: 'reviewDashboard', component: ReviewPageComponent },
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  { path: 'dashboard', component: DashboardComponent },
   {
     path: 'guideline/:formId',
     loadChildren: './business/form-review/components/guideline/guideline.module#GuidelineModule', pathMatch: 'full',

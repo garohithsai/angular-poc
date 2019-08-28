@@ -1,12 +1,11 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef, AfterViewInit, ViewChildren } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatSort } from '@angular/material/sort';
 import { SelectionModel } from '@angular/cdk/collections';
 import { FormLinkageModel } from '../../interface/form-linkage-model';
 import { Constants } from '../../constants/constants';
 import { CommonService } from '../../services/common.service';
 import {MatPaginator} from '@angular/material/paginator';
-import {MatSort} from '@angular/material/sort';
-
 
 
 @Component({
@@ -23,15 +22,21 @@ export class TableComponentComponent implements OnInit, AfterViewInit {
   @ViewChild('myButton') myButton: ElementRef<HTMLElement>;
   @Input() ElementData: FormLinkageModel[];
   @Input() buttonName: string;
+  @Input() columnHeaderNames: string;
+  @Input() enableSorting: string;
+  @Input() showButton: boolean;
+  @Input() isPaginationRequired: boolean;
   @Output() selectedData = new EventEmitter<FormLinkageModel[]>();
+  @Output() tableRowData = new EventEmitter<any>();
   @ViewChildren('mat-checkbox') private mycheckBox;
+  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+
   displayedColumns: string[];
   dataSource: MatTableDataSource<FormLinkageModel>;
   selection: SelectionModel<FormLinkageModel>;
   currentTab: string;
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
-
+  actions = false;
   constructor(private commonService: CommonService) {
   }
 
@@ -160,5 +165,8 @@ export class TableComponentComponent implements OnInit, AfterViewInit {
     return this.colMapping[column];
   }
 
+  emitRowData(rowData) {
+    this.tableRowData.emit(rowData);
+  }
 
 }

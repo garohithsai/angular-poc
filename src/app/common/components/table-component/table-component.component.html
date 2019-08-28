@@ -1,5 +1,4 @@
 <table mat-table [dataSource]="dataSource"  matSort class="mat-elevation-z8">
-
   <ng-container *ngFor="let columnName of columnsList;let colName =  columnName">
     <ng-container matColumnDef="select" *ngIf="columnName === 'select'">
       <th mat-header-cell *matHeaderCellDef>
@@ -17,10 +16,10 @@
     <ng-container matColumnDef="{{columnName}}" *ngIf="columnName != 'select'">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> {{getColumnHeaderName(columnName)}} </th>
       <ng-container *ngIf="columnName === 'number' || columnName ==='guideline'">
-        <td mat-cell *matCellDef="let element;"> <a href="#">{{element[columnName] }} </a></td>
+        <td mat-cell *matCellDef="let element;">{{element[columnName] }}</td>
       </ng-container>  
       <ng-container *ngIf="columnName !== 'number' || columnName !=='guideline'">
-        <td mat-cell *matCellDef="let element;">{{element.selected}} {{element[columnName] }}</td>
+        <td mat-cell *matCellDef="let element;"><a (click)="emitRowData(element)">{{element.selected}} {{element[columnName] }}</a></td>
       </ng-container>
     </ng-container>
   </ng-container>
@@ -33,6 +32,6 @@
   <span > Linked</span>
 </table>
 
-<mat-paginator [pageSizeOptions]="[1, 3, 4]" showFirstLastButtons></mat-paginator>
+<mat-paginator *ngIf="isPaginationRequired" [pageSizeOptions]="[1, 3, 4]" showFirstLastButtons></mat-paginator>
 
 <button *ngIf="isButtonRequired" mat-button class="primary linkage-button" (click)="sendSelectedData()">{{buttonName}}</button>

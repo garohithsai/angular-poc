@@ -5,6 +5,7 @@
     padding: 8px 16px;
 }
 .header-wrapper {
+    border-bottom: 1px solid #f5f5f5;
     img {
         height: 100px;
         width: 128px;
@@ -15,5 +16,8 @@
     flex-shrink: 0;
     .flex-space {
         flex-grow: 1;
+    }
+    .align-login-user {
+        margin-top: 10%;
     }
 }

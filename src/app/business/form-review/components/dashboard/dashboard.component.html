@@ -1,0 +1,58 @@
+<div class="col-sm-12 dashboard-wrapper">
+  <div class="row dashboard-status">
+    <div class="col-2 dashboard-side">
+        Form
+      <div>
+         Reviewer's Dashboard
+      </div>
+    </div>
+    <div class="col-3">
+      <mat-card class="dashboard-card">
+        <!-- <mat-card-title>Review Pending</mat-card-title> -->
+        <mat-card-content>
+          <p class="card-heading">Review Pending</p>
+          <p class="card-content">34</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="col-3">
+      <mat-card class="dashboard-card">
+        <mat-card-content>
+          <p class="card-heading">Review in progress</p>
+          <p class="card-content">443</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="col-3">
+      <mat-card class="dashboard-card">
+        <mat-card-content>
+          <p class="card-heading">Completed</p>
+          <p class="card-content">23</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+  <div class="margin-top-10 row">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Search forms by name,number and status">
+    </mat-form-field>
+  </div>
+  <mat-tab-group class="dashboard-tab-group">
+    <mat-tab label="Automobile"> 
+      <app-table-component [columnsList]="columnsList" [colMapping]="colMap" [ElementData]="Element_Data" [showButton]="false" [buttonName]="deLinkName"
+      (selectedData)="formsLinkageSelectedData($event)" [columnHeaderNames]="columnsList" [enableSorting]="true" (tableRowData)="getRowData($event)">
+      </app-table-component>
+   </mat-tab>
+
+    <mat-tab label="General Liability"> 
+      <app-table-component [columnsList]="columnsList" [ElementData]="Element_Data" [showButton]="false" [buttonName]="deLinkName"
+        (selectedData)="formsLinkageSelectedData($event)" [columnHeaderNames]="columnsList" [enableSorting]="true">
+      </app-table-component> 
+    </mat-tab>
+    
+    <mat-tab label="Workers' Compensation"> 
+      <app-table-component [columnsList]="columnsList" [ElementData]="Element_Data" [showButton]="false" [buttonName]="deLinkName"
+        (selectedData)="formsLinkageSelectedData($event)" [columnHeaderNames]="columnsList" [enableSorting]="true">
+      </app-table-component>  </mat-tab>
+  </mat-tab-group>
+</div>

@@ -11,7 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterService } from './common/services/router.service';
 
 import { PersonalPageComponent } from './business/form-review/components/personal-page-component/personal-page-component.component';
-import { ReviewPageComponent } from './business/form-review/components/review-page/review-page.component';
+import { DashboardComponent } from './business/form-review/components/dashboard/dashboard.component';
 import { FormReviewModule } from './business/form-review/form-review.module';
 import { FooterComponent } from './common/components/footer/footer.component';
 import { SharedModule } from './shared-module';
@@ -20,7 +20,7 @@ import { SharedModule } from './shared-module';
   declarations: [
     AppComponent,
     PersonalPageComponent,
-    ReviewPageComponent,
+    DashboardComponent,
     FooterComponent,
   ],
   imports: [
