@@ -2,7 +2,7 @@ import { MatProgressSpinnerModule,
         MatNativeDateModule, MatToolbarModule, MatButtonModule, MatInputModule,
         MatCardModule, MatFormFieldModule, MatCheckboxModule, MatDatepickerModule,
         MatRadioModule, MatSelectModule, MatSnackBarModule, MatTabsModule, MatTableModule, MatListModule,
-        MatSidenavModule, MatGridListModule, MatIconModule} from '@angular/material';
+        MatSidenavModule, MatGridListModule, MatPaginatorModule, MatSortModule, MatIconModule} from '@angular/material';
 
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
@@ -22,7 +22,9 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
         MatProgressSpinnerModule,
         MatTableModule,
         MatListModule,
+        MatSortModule,
         MatSidenavModule,
+        MatPaginatorModule,
         MatIconModule
     ], exports: [
         MatButtonModule,
@@ -41,7 +43,9 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
         MatTabsModule,
         MatTableModule,
         MatListModule,
+        MatSortModule,
         MatSidenavModule,
+        MatPaginatorModule,
         MatIconModule
     ]
 })

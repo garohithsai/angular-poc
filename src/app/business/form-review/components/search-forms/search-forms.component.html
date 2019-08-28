@@ -18,15 +18,13 @@
 
 
 <mat-form-field class="marginleft-20 select-box-width">
-  <mat-label>State</mat-label>
-  <mat-select>
-    <!-- <mat-option *ngFor="let food of foods" [value]="food.value">
-      {{food.viewValue}}
-    </mat-option> -->
-  </mat-select>
+    <mat-label>Toppings</mat-label>
+    <mat-select formControl="toppings" multiple>
+      <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+    </mat-select>
 </mat-form-field>
 
-<app-table-component [columnsList]="columnsList" [ElementData]="Element_Data" [buttonName]="deLinkName"
+<app-table-component [isSort]="isSortRequired" [columnsList]="columnsList" [colMapping]="colMap" [ElementData]="Element_Data" [isButtonRequired]="tabButton" [buttonName]="deLinkName"
   (selectedData)="formsLinkageSelectedData($event)"
 >
 </app-table-component>

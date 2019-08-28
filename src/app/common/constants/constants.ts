@@ -12,8 +12,9 @@ export class Constants  {
         'fillingType': 'Filling Type',
         'formCategory': 'Form Category',
         'guideline': 'Guideline',
-        'complexLinkage': 'complex Linkage'
+        'complexLinkage': 'Complex Linkage',
+        'detailedColumn': 'Detailed Columns'
     };
     public static FORMSLINKAGE_TABLECOLUMNS_LIST = ['select', 'number', 'name', 'editionDate', 'fillinStatus',
-    'fillingType', 'formCategory' , 'guideline', 'complexLinkage'];
+    'fillingType', 'formCategory' , 'guideline', 'complexLinkage', 'detailedColumn'];
 }
