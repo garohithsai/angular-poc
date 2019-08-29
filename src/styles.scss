@@ -75,11 +75,16 @@ fieldset {
     .light-grey {
         background-color: lightgrey;
     }
-    .margin-top-10 {
-        margin-top: 10px;
-    }
 }
-
 .selectgroup {
     display: inline-block !important;
+}
+.margin-top-10 {
+    margin-top: 10px;
+}
+.margin-top-20 {
+    margin-top: 20px;
+}
+.cursor-pointer {
+    cursor: pointer;
 }

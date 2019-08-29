@@ -1,0 +1,68 @@
+<div class="form-guideline-banner-wrapper">
+  <div class="sticky-header">
+    <mat-toolbar class="nav-card">
+      <mat-toolbar-row>
+        <div class="col-sm-5 cursor-pointer">
+          <a (click)="navigate(navigationLink)">
+            < <span *ngIf="navigationLink === 'dashboard'">Dashboard</span>
+            <span *ngIf="navigationLink === 'modify'">Modify</span>
+          </a>
+        </div>
+        <span class="col-sm-4 bold">Form GuideLines</span>
+        <div class="col-sm-3">
+          <button mat-button class="primary float-right" (click)="navigateToReview()">Review and Submit</button>
+          <button mat-button class="primary float-right">Save</button>
+        </div>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </div>
+  <mat-card class="form-guideline-card">
+    <mat-card-header>
+      <div mat-card-avatar>
+        <mat-icon> attach_file </mat-icon>
+      </div>
+      <mat-card-title>
+        <div class="row">
+          <div class="col-sm-4"> {{ form.formId }} </div>
+          <div class="col-sm-8"> {{ form.formName }} </div>
+        </div>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col-sm-2">
+          <span class="bold">Line of Business</span>
+        </div>
+        <div class="col-sm-4">
+          <span class="bold">Other Line(s) of Business</span>
+        </div>
+        <div class="col-sm-2">
+          <span class="bold">Coverage Part</span>
+        </div>
+        <div class="col-sm-2">
+          <span class="bold">Edition Date</span>
+        </div>
+        <div class="col-sm-2">
+          <span class="bold">Other Editions</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-2">
+          <span>{{ form.lineOfBusiness }}</span>
+        </div>
+        <div class="col-sm-4">
+          <span>{{ form.otherLineOfBusiness }}</span>
+        </div>
+        <div class="col-sm-2">
+          <span>{{ form.coveragePart }}</span>
+        </div>
+        <div class="col-sm-2">
+          <span>{{ form.editionDate}}</span>
+        </div>
+        <div class="col-sm-2">
+          <span>{{ form.otherEditions}}</span>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-guideline',
@@ -9,20 +8,11 @@ import { Router } from '@angular/router';
 })
 export class GuidelineComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder, private router: Router) { }
+  constructor(private formBuilder: FormBuilder) { }
 
   guidelineForm: FormGroup;
+  navLink = 'dashboard';
 
-  form = {
-    formId: 'OIR-126',
-    formName: 'Voluntary Private Passenger Non Fleet Automobile Insurance Policy',
-    multiLine: true,
-    lineOfBusiness: 'Automobile',
-    otherLineOfBusiness: 'General Liability',
-    coveragePart: 'Collision',
-    editionDate: '05/26/2019',
-    otherEditions: '04/20/2018'
-  };
   ngOnInit() {
     this.guidelineForm = this.formBuilder.group({
       formSummary : new FormGroup({}),
@@ -30,8 +20,5 @@ export class GuidelineComponent implements OnInit {
       stateApprovedForm: new FormGroup({}),
       formLinkage: new FormGroup({})
     });
-  }
-  navigateToDashboard() {
-    this.router.navigate(['dashboard']);
   }
 }

@@ -1,0 +1,5 @@
+.form-linkage-wrapper {
+    ::ng-deep .mat-tab-labels{
+        justify-content: center; /* align items in Main Axis */
+    }
+}

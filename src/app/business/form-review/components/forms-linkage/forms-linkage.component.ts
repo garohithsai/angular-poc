@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Constants } from '../../../../common/constants/constants';
 import { FormLinkageModel } from '../../../../common/interface/form-linkage-model';
 import { CommonService } from '../../../../common/services/common.service';

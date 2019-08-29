@@ -10,18 +10,21 @@ import { FormBuilderService } from './common/services/form-builder/form-builder.
 import { ErrorComponentComponent } from './common/components/error-component/error-component.component';
 import { LoaderService } from './common/services/loader.service';
 import { TableComponentComponent } from './common/components/table-component/table-component.component';
+import { FormGuidelineBannerComponent } from './business/form-review/components/form-guideline-banner/form-guideline-banner.component';
 import { RestInterceptor } from './common/interceptors/rest-interceptor';
 import { MaterialModule } from './material.module';
 @NgModule({
   declarations: [
     ErrorComponentComponent,
     HeaderComponent,
-    TableComponentComponent
+    TableComponentComponent,
+    FormGuidelineBannerComponent
   ],
   exports: [
     ErrorComponentComponent,
     HeaderComponent,
     TableComponentComponent,
+    FormGuidelineBannerComponent,
     MaterialModule
   ],
   imports: [
