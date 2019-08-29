@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import {FormLinkageModel} from '../../../../common/interface/form-linkage-model';
 import { Constants } from '../../../../common/constants/constants';
 import { CommonService } from '../../../../common/services/common.service';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
+import { RestService } from '../../../../common/services/rest.service';
+import { FormBuilderService } from '../../../../common/services/form-builder/form-builder.service';
+import { SEARCH_FORM_CONTROLS } from './search-forms.form';
 
 @Component({
   selector: 'app-search-forms',
@@ -39,24 +42,37 @@ export class SearchFormsComponent implements OnInit {
 
   toppings = new FormControl();
   toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
+  lineOfBusinessData: any;
+  stateData: any;
+  formSummary: FormGroup;
+  categoryPartData: Object;
 
-  constructor(private commonService: CommonService) { }
+  constructor(private commonService: CommonService, private restService: RestService, private formBuilderService: FormBuilderService) { }
 
   ngOnInit() {
-    // for (let i = 0; i < this.Element_Data.length ; i++) {
-    //   const x = [];
-    //   for (const key in this.Element_Data[i]) {
-    //     if (key === 'fillinStatus' || key === 'fillingType' || key === 'formCategory') {
-    //      x.push(key + ':' + this.Element_Data[i][key]);
-    //     }
-    // }
-    // this.Element_Data[i].detailedColumn = x;
-    // }
-    // console.log(JSON.stringify(this.Element_Data));
+    this.formSummary = this.formBuilderService.buildForm(SEARCH_FORM_CONTROLS);
+    this.setData();
   }
 
   formsLinkageSelectedData(data) {
     this.commonService.setLinkedForms(data);
+  }
+
+  setData() {
+    this.restService.get('/api/v1/metadata/cache', '?dataSetTypes=Line of Business,State').subscribe((data) => {
+      this.lineOfBusinessData = data['Line of Business'];
+      this.stateData = data['State'];
+    });
+  }
+
+  setCategoryPart() {
+    const reqObj = {
+      'dataSetType': 'Coverage Part',
+      'dependencyDataSetValue': this.formSummary.get('lineOfBusiness').value
+    };
+    this.restService.post('/api/v1/metadata/cache', '/filter', reqObj).subscribe((data) => {
+      this.categoryPartData = data['Coverage Part'];
+    });
   }
 
   onLinkClick($event) {

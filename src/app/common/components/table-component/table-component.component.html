@@ -35,7 +35,9 @@
    
   </tr>
 </table>
+<ng-container *ngIf="isPaginationRequired">
+  <mat-paginator [pageSizeOptions]="[1, 3, 4]" showFirstLastButtons></mat-paginator>
+</ng-container>
 
-<mat-paginator *ngIf="isPaginationRequired" [pageSizeOptions]="[1, 3, 4]" showFirstLastButtons></mat-paginator>
 
 <button *ngIf="isButtonRequired && selection.selected.length" mat-button class="primary linkage-button col-sm-1 col-md-1" (click)="sendSelectedData()">{{buttonName}}</button>

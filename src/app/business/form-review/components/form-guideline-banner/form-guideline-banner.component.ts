@@ -24,7 +24,6 @@ export class FormGuidelineBannerComponent implements OnInit {
   };
 
   ngOnInit() {
-    
   }
 
   navigateToDashboard() {

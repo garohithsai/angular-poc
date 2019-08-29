@@ -39,19 +39,19 @@
   </div>
   <mat-tab-group class="dashboard-tab-group">
     <mat-tab label="Automobile"> 
-      <app-table-component [columnsList]="columnsList" [colMapping]="colMap" [ElementData]="Element_Data" [showButton]="false" [buttonName]="deLinkName"
+      <app-table-component [columnsList]="columnsList" [isPaginationRequired]="false" [colMapping]="colMap" [ElementData]="Element_Data" [showButton]="false" [buttonName]="deLinkName"
       (selectedData)="formsLinkageSelectedData($event)" [columnHeaderNames]="columnsList" [enableSorting]="true" (tableRowData)="getRowData($event)">
       </app-table-component>
    </mat-tab>
 
     <mat-tab label="General Liability"> 
-      <app-table-component [columnsList]="columnsList" [colMapping]="colMap" [ElementData]="Element_Data" [showButton]="false" [buttonName]="deLinkName"
+      <app-table-component [columnsList]="columnsList" [isPaginationRequired]="false" [colMapping]="colMap" [ElementData]="Element_Data" [showButton]="false" [buttonName]="deLinkName"
         (selectedData)="formsLinkageSelectedData($event)" [columnHeaderNames]="columnsList" [enableSorting]="true">
       </app-table-component> 
     </mat-tab>
     
     <mat-tab label="Workers' Compensation"> 
-      <app-table-component [columnsList]="columnsList" [colMapping]="colMap" [ElementData]="Element_Data" [showButton]="false" [buttonName]="deLinkName"
+      <app-table-component [columnsList]="columnsList" [isPaginationRequired]="false" [colMapping]="colMap" [ElementData]="Element_Data" [showButton]="false" [buttonName]="deLinkName"
         (selectedData)="formsLinkageSelectedData($event)" [enableSorting]="isSortRequired" [columnHeaderNames]="columnsList">
       </app-table-component>  </mat-tab>
   </mat-tab-group>
