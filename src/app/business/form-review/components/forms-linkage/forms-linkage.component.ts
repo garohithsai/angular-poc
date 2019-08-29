@@ -15,9 +15,9 @@ export class FormsLinkageComponent implements OnInit {
   constructor(private commonService: CommonService) {
   }
 
-   Element_Data: FormLinkageModel[];
+  Element_Data: FormLinkageModel[];
 
-  columnsList =  Object.keys(Constants.LINKAGE_COL_NAMES);
+  columnsList = Object.keys(Constants.LINKAGE_COL_NAMES);
   deLinkName = 'De Link';
   colMap = Constants.LINKAGE_COL_NAMES;
   tabButton = true;
@@ -28,6 +28,7 @@ export class FormsLinkageComponent implements OnInit {
   formsLinkageSelectedData(data) {
     this.commonService.setDeletedLinkedForms(data);
   }
+
 
 
   onLinkClick(tab) {

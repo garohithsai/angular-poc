@@ -1,26 +1,27 @@
+<form [formGroup]="formSummary">
 <mat-form-field class="marginleft-20 col-sm-3 col-md-3 selectgroup">
   <mat-label>Line of Business</mat-label>
-  <mat-select>
-    <!-- <mat-option *ngFor="let food of foods" [value]="food.value">
-      {{food.viewValue}}
-    </mat-option> -->
+  <mat-select formControlName="lineOfBusiness" (selectionChange)="setCategoryPart()">
+    <mat-option *ngFor="let lob of lineOfBusinessData" [value]="lob.data">
+      {{lob.data}}
+    </mat-option>
   </mat-select>
 </mat-form-field>
 
 <mat-form-field class="marginleft-20 col-sm-3 col-md-3 selectgroup">
   <mat-label>Category Part</mat-label>
-  <mat-select>
-    <!-- <mat-option *ngFor="let food of foods" [value]="food.value">
-      {{food.viewValue}}
-    </mat-option> -->
+  <mat-select formControlName="categoryPart" [disabled]="!formSummary.controls.lineOfBusiness.value">
+    <mat-option *ngFor="let catPart of categoryPartData" [value]="catPart.data">
+      {{catPart.data}}
+    </mat-option>
   </mat-select>
 </mat-form-field>
 
 
 <mat-form-field class="marginleft-20 col-sm-3 col-md-3 selectgroup">
     <mat-label>States</mat-label>
-    <mat-select multiple>
-      <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+    <mat-select formControlName="state" multiple>
+      <mat-option *ngFor="let state of stateData" [value]="state.data">{{state.data}}</mat-option>
     </mat-select>
 </mat-form-field>
 
@@ -28,3 +29,4 @@
   (selectedData)="formsLinkageSelectedData($event)"
 >
 </app-table-component>
+</form>

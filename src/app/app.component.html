@@ -1,4 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
+<div class="overlay" *ngIf="isLoading | async">
+    <mat-spinner class="spinner"></mat-spinner>
+</div>
 <div class="content-wrapper">
     <app-header></app-header>
     <main class="content">

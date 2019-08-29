@@ -27,7 +27,6 @@ export class TableComponentComponent implements OnInit, AfterViewInit {
   @Input() isPaginationRequired: boolean;
   @Output() selectedData = new EventEmitter<FormLinkageModel[]>();
   @Output() tableRowData = new EventEmitter<any>();
-  @ViewChildren('mat-checkbox') private mycheckBox;
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -45,11 +44,11 @@ export class TableComponentComponent implements OnInit, AfterViewInit {
     this.selection = new SelectionModel<FormLinkageModel>(true, []);
     this.displayedColumns = this.columnsList;
     this.commonService.setSearchFormData(this.ElementData);
-    this.dataSource.paginator = this.paginator;
   }
 
   ngAfterViewInit() {
     console.log('AfterViewInit' + this);
+    this.dataSource.paginator = this.paginator;
   }
 
   setData(data, tabData) {

@@ -14,6 +14,10 @@ export class RestService {
         return this.http.post(serviceUrl, body, { headers: this.headers });
     }
 
+    get(controllerPath, serviceName) {
+        const serviceUrl = this.getServiceUrl(controllerPath, serviceName);
+        return this.http.get(serviceUrl, { headers: this.headers });
+    }
 
     getServiceUrl(controllerPath, serviceName) {
         return this.getDomainUrl() + controllerPath + serviceName;
