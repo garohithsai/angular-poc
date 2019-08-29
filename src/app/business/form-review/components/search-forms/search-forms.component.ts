@@ -35,7 +35,7 @@ export class SearchFormsComponent implements OnInit {
   deLinkName = 'Link';
   colMap = Constants.LINKAGE_COL_NAMES;
   tabButton = true;
-  isSortRequired = true;
+  isSortRequired = false;
 
   toppings = new FormControl();
   toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
@@ -43,16 +43,16 @@ export class SearchFormsComponent implements OnInit {
   constructor(private commonService: CommonService) { }
 
   ngOnInit() {
-    for (let i = 0; i < this.Element_Data.length ; i++) {
-      const x = [];
-      for (const key in this.Element_Data[i]) {
-        if (key === 'fillinStatus' || key === 'fillingType' || key === 'formCategory') {
-         x.push(key + ':' + this.Element_Data[i][key]);
-        }
-    }
-    this.Element_Data[i].detailedColumn = x;
-    }
-    console.log(JSON.stringify(this.Element_Data));
+    // for (let i = 0; i < this.Element_Data.length ; i++) {
+    //   const x = [];
+    //   for (const key in this.Element_Data[i]) {
+    //     if (key === 'fillinStatus' || key === 'fillingType' || key === 'formCategory') {
+    //      x.push(key + ':' + this.Element_Data[i][key]);
+    //     }
+    // }
+    // this.Element_Data[i].detailedColumn = x;
+    // }
+    // console.log(JSON.stringify(this.Element_Data));
   }
 
   formsLinkageSelectedData(data) {

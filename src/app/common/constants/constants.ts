@@ -12,8 +12,7 @@ export class Constants  {
         'fillingType': 'Filling Type',
         'formCategory': 'Form Category',
         'guideline': 'Guideline',
-        'complexLinkage': 'Complex Linkage',
-        'detailedColumn': 'Detailed Columns'
+        'complexLinkage': 'Complex Linkage'
     };
     public static GUIDELINES_COL_NAMES = {
         'formNumber': 'Form #',
@@ -24,7 +23,7 @@ export class Constants  {
         'status': 'Status'
     };
     public static FORMSLINKAGE_TABLECOLUMNS_LIST = ['select', 'number', 'name', 'editionDate', 'fillinStatus',
-    'fillingType', 'formCategory' , 'guideline', 'complexLinkage', 'detailedColumn'];
+    'fillingType', 'formCategory' , 'guideline', 'complexLinkage'];
     public static FORMS_GUIDELINES_COLUMN_LIST = ['Form #', 'Form Name', 'Coverage Part', 'Last Edited',
     'Updated By', 'Status'];
 }

@@ -8,7 +8,7 @@ export interface FormLinkageModel {
     guideline: string;
     complexLinkage: string;
     excluded?: boolean;
-    detailedColumn?: Array<any>;
+    // detailedColumn?: Array<any>;
 }
 
 export interface GuideLinesDashboardModel {

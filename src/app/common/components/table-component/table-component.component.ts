@@ -17,8 +17,7 @@ export class TableComponentComponent implements OnInit, AfterViewInit {
 
   @Input() columnsList: string[];
   @Input() colMapping: Object;
-  @Input() isSort: Boolean;
-  @Input() isButtonRequired: Boolean;
+  @Input() isButtonRequired: boolean;
   @ViewChild('myButton') myButton: ElementRef<HTMLElement>;
   @Input() ElementData: FormLinkageModel[];
   @Input() buttonName: string;
@@ -162,7 +161,9 @@ export class TableComponentComponent implements OnInit, AfterViewInit {
   }
 
   getColumnHeaderName(column: string) {
-    return this.colMapping[column];
+    if (this.colMapping) {
+      return this.colMapping[column];
+    }
   }
 
   emitRowData(rowData) {
