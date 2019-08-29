@@ -40,7 +40,7 @@ export class DashboardComponent implements OnInit {
 
   colMap =  Constants.GUIDELINES_COL_NAMES;
   columnsList =  Object.keys(Constants.GUIDELINES_COL_NAMES);
-  deLinkName = 'Link';
+  isSortRequired = true;
 
   lobs = [
     {
